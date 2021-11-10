@@ -9,6 +9,7 @@
   --white: 0 0% 100%;
   --black: 0 0% 0%;
 
+  --fs-200: 0.5rem;
   --fs-400: 1rem;
   --fs-500: 2.5rem;
   --fs-700: 3.5rem;
@@ -119,18 +120,33 @@ body {
 }
 
 /* FONT SIZES */
-.fs-400 {
-  font-size: var(--fs-400);
+.fs-200 {
+  font-size: var(--fs-200);
 }
 
 .fs-400 {
   font-size: var(--fs-400);
 }
 
-/* TEXT COLOR */
+/* FONT COLOR */
 
 .text-light {
   color: hsl(var(--black) / 0.5);
+}
+
+.text-orange {
+  color: hsl(var(--c-orange));
+}
+
+/* FONT SPACING */
+.letter-space-1 {
+  letter-spacing: 0.25rem;
+}
+.letter-space-2 {
+  letter-spacing: 0.1rem;
+}
+.letter-space-3 {
+  letter-spacing: 0.05rem;
 }
 
 .container {
@@ -138,6 +154,12 @@ body {
   margin-inline: auto;
 }
 
+/* TEXT STYLE */
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* FLEX & GRID */
 .flex {
   display: flex;
   gap: var(--gap, 1rem);
@@ -150,6 +172,14 @@ body {
 .grid {
   display: grid;
   gap: var(--gap, 1rem);
+}
+
+.grid--columns {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--center {
+  place-items: center;
 }
 
 /* -------------------- */
@@ -179,4 +209,35 @@ nav a {
 .user-avatar {
   height: 3rem;
   aspect-ratio: 1;
+}
+
+/* -------------------- */
+/* MAIN CONTENT         */
+/* -------------------- */
+
+/* PHOTOS */
+.product-photos {
+  margin: 5rem 3rem;
+}
+.product-big-photo {
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.product-thumbnails {
+  --gap: 2rem;
+}
+.product-thumbnails > a {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.product-thumbnails > a:hover,
+.product-thumbnails > a:focus-visible,
+.product-thumbnails > .active {
+  outline: solid 3px hsl(var(--c-orange));
+}
+.product-thumbnails > a:hover img,
+.product-thumbnails > a:focus-visible img,
+.product-thumbnails > .active img {
+  opacity: 0.5;
 }
