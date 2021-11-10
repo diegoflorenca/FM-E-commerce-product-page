@@ -108,13 +108,31 @@ li {
   list-style-type: none;
 }
 
-body {
-  font-family: 'Kumbh Sans', sans-serif;
-}
-
 /* -------------------- */
 /* UTILITIES            */
 /* -------------------- */
+
+/* FONTS */
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  line-height: 1.5;
+}
+
+/* FONT SIZES */
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+/* TEXT COLOR */
+
+.text-light {
+  color: hsl(var(--black) / 0.5);
+}
+
 .container {
   max-width: 70rem;
   margin-inline: auto;
@@ -138,13 +156,27 @@ body {
 /* HEADER               */
 /* -------------------- */
 header {
+  padding: 1rem 0;
   --gap: 2.5rem;
   align-items: center;
   justify-content: space-between;
+  border-bottom: solid 1px hsl(var(--black) / 0.15);
 }
+
+.logo {
+  margin-right: 1rem;
+}
+
 nav a {
   text-decoration: none;
 }
-.user-info {
-  align-self: flex-end;
+
+.menu-link:hover {
+  padding-bottom: 2.6rem;
+  border-bottom: solid 5px hsl(var(--c-orange));
+}
+
+.user-avatar {
+  height: 3rem;
+  aspect-ratio: 1;
 }
