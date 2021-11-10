@@ -26,29 +26,31 @@
     <script src="./js/index.js" defer></script>
   </head>
   <body>
-    <header>
-      <div>
-        <div class="logo"><img src="./images/logo.svg" alt="sneakers logo" /></div>
-        <nav>
-          <ul>
-            <li><a href="#">Men</a></li>
-            <li><a href="#">Women</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+    <div class="container">
+      <header class="flex">
+        <div class="flex flex--center">
+          <div class="logo"><img src="./images/logo.svg" alt="sneakers logo" /></div>
+          <nav>
+            <ul class="flex flex--center">
+              <li><a class="menu-link" href="#">Men</a></li>
+              <li><a class="menu-link" href="#">Women</a></li>
+              <li><a class="menu-link" href="#">About</a></li>
+              <li><a class="menu-link" href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="user-info">
+          <ul class="flex flex--center">
+            <li>
+              <a href="#"><img src="./images/icon-cart.svg" alt="cart icon" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="./images/image-avatar.png" alt="user avatar" /></a>
+            </li>
           </ul>
-        </nav>
-      </div>
-      <div class="user-info">
-        <ul>
-          <li>
-            <a href="#"><img src="./images/icon-cart.svg" alt="cart icon" /></a>
-          </li>
-          <li>
-            <a href="#"><img src="./images/image-avatar.png" alt="user avatar" /></a>
-          </li>
-        </ul>
-      </div>
-    </header>
+        </div>
+      </header>
+    </div>
     <!-- Collections
 
   Sneaker Company

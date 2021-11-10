@@ -1,3 +1,19 @@
+:root {
+  --c-orange: 26 100% 55%;
+  --pale-orange: 25 100% 94%;
+
+  --darkest-blue: 220 13% 13%;
+  --drak-grayish-blue: 219 9% 45%;
+  --grayish-blue: 220 14% 75%;
+  --light-grayish-blue: 223 64% 98%;
+  --white: 0 0% 100%;
+  --black: 0 0% 0%;
+
+  --fs-400: 1rem;
+  --fs-500: 2.5rem;
+  --fs-700: 3.5rem;
+}
+
 /* -------------------- */
 /* CSS RESET            */
 /* -------------------- */
@@ -80,6 +96,55 @@ select {
   }
 }
 
+/* -------------------- */
+/* MY CSS RESET         */
+/* -------------------- */
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
 body {
   font-family: 'Kumbh Sans', sans-serif;
+}
+
+/* -------------------- */
+/* UTILITIES            */
+/* -------------------- */
+.container {
+  max-width: 70rem;
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.flex--center {
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+/* -------------------- */
+/* HEADER               */
+/* -------------------- */
+header {
+  --gap: 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+nav a {
+  text-decoration: none;
+}
+.user-info {
+  align-self: flex-end;
 }
