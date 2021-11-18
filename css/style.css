@@ -3,7 +3,7 @@
   --pale-orange: 25 100% 94%;
 
   --darkest-blue: 220 13% 13%;
-  --drak-grayish-blue: 219 9% 45%;
+  --dark-grayish-blue: 219 9% 45%;
   --grayish-blue: 220 14% 75%;
   --light-grayish-blue: 223 64% 98%;
   --white: 0 0% 100%;
@@ -11,7 +11,7 @@
 
   --fs-200: 0.5rem;
   --fs-400: 1rem;
-  --fs-500: 2.5rem;
+  --fs-600: 2.5rem;
   --fs-700: 3.5rem;
 }
 
@@ -109,6 +109,15 @@ li {
   list-style-type: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+
 /* -------------------- */
 /* UTILITIES            */
 /* -------------------- */
@@ -126,6 +135,14 @@ body {
 
 .fs-400 {
   font-size: var(--fs-400);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
 }
 
 /* FONT COLOR */
@@ -174,12 +191,18 @@ body {
   gap: var(--gap, 1rem);
 }
 
-.grid--columns {
-  grid-template-columns: repeat(2, 1fr);
-}
-
 .grid--center {
   place-items: center;
+}
+
+@media (min-width: 45rem) {
+  .grid--columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.container {
+  padding: 1.5rem;
 }
 
 /* -------------------- */
@@ -240,4 +263,58 @@ nav a {
 .product-thumbnails > a:focus-visible img,
 .product-thumbnails > .active img {
   opacity: 0.5;
+}
+
+/* -------------------- */
+/* QUANTITY BUTON       */
+/* -------------------- */
+
+.product-quantity {
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 0.5rem;
+  background: hsl(var(--light-grayish-blue));
+}
+
+.product-quantity #productQuantity {
+  min-width: 3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.product-quantity > button {
+  border:none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  width:100%;
+  padding:1rem;
+  transition: background 350ms ease-in-out;
+}
+
+.product-quantity > button:hover {
+  background: hsl(var(--dark-grayish-blue) / 0.05);
+}
+
+.product-quantity button > img {
+  display: inline-block;
+  min-width: 1rem;
+}
+
+.product-quantity .btn-minus {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.product-quantity .btn-minus > img {
+  margin-bottom: 4px;
+}
+
+.product-quantity .btn-plus {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+@media (min-width: 45rem) {
+  .add-to-cart {
+    grid-template-columns: 1fr 1fr;
+  }
 }
