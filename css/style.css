@@ -1,5 +1,5 @@
 :root {
-  --c-orange: 26 100% 55%;
+  --orange: 26 100% 55%;
   --pale-orange: 25 100% 94%;
 
   --darkest-blue: 220 13% 13%;
@@ -11,6 +11,7 @@
 
   --fs-200: 0.5rem;
   --fs-400: 1rem;
+  --fs-500: 2rem;
   --fs-600: 2.5rem;
   --fs-700: 3.5rem;
 }
@@ -118,6 +119,24 @@ h6 {
   line-height: 1;
 }
 
+p {
+  color: hsl( var(--black) / 0.6);
+}
+
+button {
+  border: none;
+  cursor:pointer;
+  background-color: inherit;
+  transition: background 350ms ease-in-out;
+}
+
+input {
+  text-align: center;
+  font-weight: 700;
+  border: none;
+  background: inherit;
+}
+
 /* -------------------- */
 /* UTILITIES            */
 /* -------------------- */
@@ -137,6 +156,10 @@ body {
   font-size: var(--fs-400);
 }
 
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
 .fs-600 {
   font-size: var(--fs-600);
 }
@@ -152,7 +175,7 @@ body {
 }
 
 .text-orange {
-  color: hsl(var(--c-orange));
+  color: hsl(var(--orange));
 }
 
 /* FONT SPACING */
@@ -169,6 +192,7 @@ body {
 .container {
   max-width: 70rem;
   margin-inline: auto;
+  --gap: 1.5rem;
 }
 
 /* TEXT STYLE */
@@ -226,7 +250,7 @@ nav a {
 
 .menu-link:hover {
   padding-bottom: 2.6rem;
-  border-bottom: solid 5px hsl(var(--c-orange));
+  border-bottom: solid 5px hsl(var(--orange));
 }
 
 .user-avatar {
@@ -257,7 +281,7 @@ nav a {
 .product-thumbnails > a:hover,
 .product-thumbnails > a:focus-visible,
 .product-thumbnails > .active {
-  outline: solid 3px hsl(var(--c-orange));
+  outline: solid 3px hsl(var(--orange));
 }
 .product-thumbnails > a:hover img,
 .product-thumbnails > a:focus-visible img,
@@ -265,52 +289,78 @@ nav a {
   opacity: 0.5;
 }
 
-/* -------------------- */
-/* QUANTITY BUTON       */
-/* -------------------- */
+/* Price */
+.price{
+  --gap:0.5rem;
+  font-weight: 700;
+}
 
-.product-quantity {
-  align-items: center;
-  justify-content: space-around;
+@media (max-width: 45rem) {
+  .price {
+    grid-template-columns: repeat(2, 1fr);
+  } 
+  .price p {
+    justify-self: end;
+  }
+}
+
+.price h4 {
+  padding: 0.5rem;
+  border-radius:0.5rem;
+  color: hsl(var(--orange));
+  margin-left: 1rem;
+  background-color: hsl(var(--pale-orange));
+}
+
+.price p {
+  text-decoration: line-through;
+}
+
+/* Quantity Selector */
+
+.quantity-selector {
+  grid-template-columns: repeat(3, minmax(2rem, 12rem));
+  background-color: hsl( var(--light-grayish-blue));
   border-radius: 0.5rem;
-  background: hsl(var(--light-grayish-blue));
+  overflow: hidden;
 }
 
-.product-quantity #productQuantity {
-  min-width: 3rem;
-  text-align: center;
-  font-weight: bold;
+.quantity-selector button:first-child {
+  background-image: url(../images/icon-minus.svg);
 }
 
-.product-quantity > button {
-  border:none;
-  outline: none;
-  background: none;
-  cursor: pointer;
-  width:100%;
-  padding:1rem;
-  transition: background 350ms ease-in-out;
+.quantity-selector button:last-child{
+  background-image: url(../images/icon-plus.svg);
 }
 
-.product-quantity > button:hover {
-  background: hsl(var(--dark-grayish-blue) / 0.05);
+.quantity-selector > button {
+  padding: 1.5rem;
+  background: center no-repeat;
+  background-size: 1rem;
 }
 
-.product-quantity button > img {
-  display: inline-block;
-  min-width: 1rem;
+.quantity-selector button:hover {
+  background-color:hsl( var(--dark-grayish-blue) / 0.05);
 }
 
-.product-quantity .btn-minus {
-  border-radius: 0.5rem 0 0 0.5rem;
+.quantity-selector > input[type='text'] {
+  margin-inline: auto;
+  width: clamp(3rem, 4vw + 1rem, 20rem);
 }
 
-.product-quantity .btn-minus > img {
-  margin-bottom: 4px;
+button.addToCart {
+  background-color: hsl( var(--orange));
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-weight: 700;
+  color: hsl(var(--white));
+  box-shadow: 0 1rem 2rem hsl( var(--orange) / 0.5);
+  transition:350ms ease-in-out;
 }
 
-.product-quantity .btn-plus {
-  border-radius: 0 0.5rem 0.5rem 0;
+button.addToCart:hover {
+  background-color: hsl( var(--orange) / 0.7);
+  box-shadow: 0 0 1rem hsl( var(--orange) / 0.5);
 }
 
 @media (min-width: 45rem) {

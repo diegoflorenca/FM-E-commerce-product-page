@@ -71,29 +71,28 @@
             </div>
           </div>
           <div class="grid grid--center">
-            <div class="container">
+            <div class="container grid">
               <h1 class="fs-400 text-orange letter-space-2 uppercase">Sneaker Company</h1>
 
               <h2 class="fs-600 letter-space-3">Fall Limited Edition Sneakers</h2>
 
               <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
 
-              <div>
-                <h3>$125.00 <span>50%</span></h3>
-                <h4>$250.00</h4>
+              <div class="price grid">
+                <div class="flex flex--center">
+                  <h3 class="fs-500">$125.00</h3>
+                  <h4>50%</h4>
+                </div>
+                <p>$250.00</p>
               </div>
 
               <div class="add-to-cart grid">
-                <div class="product-quantity flex">
-                  <button class="btn-minus">
-                    <img src="./images/icon-minus.svg" alt="minus icon" />
-                  </button>
-                  <p type="text" name="productQuantity" id="productQuantity">0</p>
-                  <button class="btn-plus">
-                    <img src="./images/icon-plus.svg" alt="plus icon" />
-                  </button>
+                <div class="quantity-selector grid">
+                  <button data-quantity="minus"></button>
+                  <input name="input-quantity" id="input-quantity" type="text" readonly value="0" />
+                  <button data-quantity="plus"></button>
                 </div>
-                <button id="addToCart">Add to cart</button>
+                <button class="addToCart">Add to cart</button>
               </div>
             </div>
           </div>
