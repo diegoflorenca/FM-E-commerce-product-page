@@ -120,12 +120,12 @@ h6 {
 }
 
 p {
-  color: hsl( var(--black) / 0.6);
+  color: hsl(var(--black) / 0.6);
 }
 
 button {
   border: none;
-  cursor:pointer;
+  cursor: pointer;
   background-color: inherit;
   transition: background 350ms ease-in-out;
 }
@@ -290,15 +290,15 @@ nav a {
 }
 
 /* Price */
-.price{
-  --gap:0.5rem;
+.price {
+  --gap: 0.5rem;
   font-weight: 700;
 }
 
 @media (max-width: 45rem) {
   .price {
     grid-template-columns: repeat(2, 1fr);
-  } 
+  }
   .price p {
     justify-self: end;
   }
@@ -306,7 +306,7 @@ nav a {
 
 .price h4 {
   padding: 0.5rem;
-  border-radius:0.5rem;
+  border-radius: 0.5rem;
   color: hsl(var(--orange));
   margin-left: 1rem;
   background-color: hsl(var(--pale-orange));
@@ -319,8 +319,10 @@ nav a {
 /* Quantity Selector */
 
 .quantity-selector {
-  grid-template-columns: repeat(3, minmax(2rem, 12rem));
-  background-color: hsl( var(--light-grayish-blue));
+  --gap: 0;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  background-color: hsl(var(--light-grayish-blue));
   border-radius: 0.5rem;
   overflow: hidden;
 }
@@ -329,42 +331,52 @@ nav a {
   background-image: url(../images/icon-minus.svg);
 }
 
-.quantity-selector button:last-child{
+.quantity-selector button:last-child {
   background-image: url(../images/icon-plus.svg);
 }
 
 .quantity-selector > button {
   padding: 1.5rem;
+  padding-inline: clamp(0.5rem, 0.1rem, 1.5rem);
   background: center no-repeat;
   background-size: 1rem;
 }
 
 .quantity-selector button:hover {
-  background-color:hsl( var(--dark-grayish-blue) / 0.05);
+  background-color: hsl(var(--dark-grayish-blue) / 0.05);
 }
 
 .quantity-selector > input[type='text'] {
   margin-inline: auto;
-  width: clamp(3rem, 4vw + 1rem, 20rem);
+  width: clamp(1rem, 4vw + 1rem, 20rem);
 }
 
 button.addToCart {
-  background-color: hsl( var(--orange));
+  background-color: hsl(var(--orange));
   border-radius: 0.5rem;
   padding: 1rem;
   font-weight: 700;
   color: hsl(var(--white));
-  box-shadow: 0 1rem 2rem hsl( var(--orange) / 0.5);
-  transition:350ms ease-in-out;
+  box-shadow: 0 1rem 2rem hsl(var(--orange) / 0.5);
+  transition: 350ms ease-in-out;
+
+  --gap: 0.3rem;
+  grid-auto-flow: column;
+  place-content: center;
+}
+
+button.addToCart:before {
+  content: url(../images/icon-cart.svg);
+  filter: brightness(100);
 }
 
 button.addToCart:hover {
-  background-color: hsl( var(--orange) / 0.7);
-  box-shadow: 0 0 1rem hsl( var(--orange) / 0.5);
+  background-color: hsl(var(--orange) / 0.7);
+  box-shadow: 0 0 1rem hsl(var(--orange) / 0.5);
 }
 
 @media (min-width: 45rem) {
   .add-to-cart {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 40% 60%;
   }
 }
