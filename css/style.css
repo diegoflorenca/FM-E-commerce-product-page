@@ -189,12 +189,6 @@ body {
   letter-spacing: 0.05rem;
 }
 
-.container {
-  max-width: 70rem;
-  margin-inline: auto;
-  --gap: 1.5rem;
-}
-
 /* TEXT STYLE */
 .uppercase {
   text-transform: uppercase;
@@ -233,34 +227,127 @@ body {
 /* HEADER               */
 /* -------------------- */
 header {
-  padding: 1rem 0;
-  --gap: 2.5rem;
-  align-items: center;
+  margin: 0.5rem 0;
   justify-content: space-between;
-  border-bottom: solid 1px hsl(var(--black) / 0.15);
+}
+
+.menu-toggle {
+  display: none;
 }
 
 .logo {
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
-nav a {
+.menu-link {
   text-decoration: none;
+  color: hsl(var(--black) / 0.5);
+  padding-bottom: 1.6rem;
 }
 
 .menu-link:hover {
-  padding-bottom: 2.6rem;
-  border-bottom: solid 5px hsl(var(--orange));
+  border-bottom: 0.3rem solid hsl(var(--orange));
 }
 
 .user-avatar {
   height: 3rem;
-  aspect-ratio: 1;
 }
 
+@media (max-width: 35rem) {
+  header {
+    padding-inline: 2rem;
+  }
+  .menu-toggle {
+    display: inline-block;
+    background: url(../images/icon-menu.svg) no-repeat;
+    width: 1rem;
+    height: 1rem;
+
+    z-index: 10000;
+  }
+
+  nav {
+    background: hsl(var(--white));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70vw;
+    height: 100vh;
+
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: 350ms ease-in-out;
+  }
+
+  header:before {
+    content: '';
+    background: hsl(var(--black) / 0.8);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    z-index: 10000;
+    transform: translateX(100%);
+    transition: opacity 350ms ease-in-out;
+  }
+
+  nav ul {
+    flex-direction: column;
+    margin-top: 6rem;
+    margin-left: 2rem;
+  }
+
+  .menu-link {
+    display: block;
+    font-weight: 700;
+    color: hsl(var(--black) / 1);
+    padding: 0.5rem;
+  }
+
+  .menu-link:hover {
+    border: none;
+  }
+
+  .user-avatar {
+    height: 1.5rem;
+  }
+
+  /* Menu Active */
+  header.active:before {
+    z-index: 100;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  header.active .menu-toggle {
+    background: url(../images/icon-close.svg) no-repeat;
+  }
+
+  header.active nav {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 35rem) {
+  header {
+    max-width: 70rem;
+    margin-inline: auto;
+    --gap: 2.5rem;
+    border-bottom: 1px solid hsl(var(--black) / 0.5);
+  }
+}
 /* -------------------- */
 /* MAIN CONTENT         */
 /* -------------------- */
+
+main {
+  max-width: 70rem;
+  margin-inline: auto;
+  --gap: 1.5rem;
+}
 
 /* PHOTOS */
 .product-photos {
