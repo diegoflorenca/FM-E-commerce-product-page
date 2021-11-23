@@ -11,6 +11,32 @@ function menuToggle() {
 }
 
 /*
+Mobile photo navigation
+*/
+const previousPhoto = document.querySelector('.previous-photo');
+const nextPhoto = document.querySelector('.next-photo');
+const currentPhoto = document.querySelector('.product-big-photo');
+
+previousPhoto.addEventListener('click', updatePhoto);
+nextPhoto.addEventListener('click', updatePhoto);
+
+let photoCounter = 1;
+
+function updatePhoto(e) {
+  const trigger = e.currentTarget.className;
+  if (trigger == 'next-photo') {
+    photoCounter++;
+    if (photoCounter == 5) photoCounter = 1;
+  } else {
+    photoCounter--;
+    if (photoCounter == 0) photoCounter = 4;
+  }
+
+  const imageUrl = `./images/image-product-${photoCounter}.jpg`;
+  currentPhoto.setAttribute('src', imageUrl);
+}
+
+/*
 Product quantity selector
 */
 const btnMinus = document.querySelector('[data-quantity=minus]');
