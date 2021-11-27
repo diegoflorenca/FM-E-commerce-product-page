@@ -433,7 +433,7 @@ header {
 
 .cart-info {
   --gap: 1rem;
-  margin-top: 3.5rem;
+  margin-top: 1.5rem;
   justify-content: space-between;
 }
 
@@ -521,15 +521,33 @@ main {
   background: url(../images/icon-next.svg) no-repeat;
 }
 
+.fs-big-photo .previous-photo {
+  left: -3rem;
+}
+
+.fs-big-photo .next-photo {
+  right: -3rem;
+}
+
+.fs-big-photo .previous-photo:hover {
+  background-image: url(../images/icon-previous-hover.svg);
+  background-size: 0.8rem;
+}
+
+.fs-big-photo .next-photo:hover {
+  background-image: url(../images/icon-next-hover.svg);
+  background-size: 0.8rem;
+}
+
 .previous-photo,
 .next-photo {
   background-color: hsl(var(--white));
   background-position: center center;
   position: absolute;
+  transform: translateY(-50%);
   top: 50%;
   padding: 1.5rem;
   margin: 1.5rem;
-  transform: translateY(-50%);
   border-radius: 50%;
 }
 
@@ -674,10 +692,17 @@ button.addToCart:hover {
 
 .fs-close {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -1.8rem;
+  right: -0.4rem;
   width: 1rem;
   height: 1rem;
   background: url(../images/icon-close.svg) no-repeat;
-  background-position: center;
+  background-size: cover;
+  filter: brightness(100);
+}
+
+.fs-close:hover {
+  filter: none;
+  background: url(../images/icon-close-hover.svg) no-repeat;
+  background-size: cover;
 }
