@@ -1,131 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
 
-    <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/index.js" defer></script>
-  </head>
-  <body>
-    <header class="flex">
-      <div class="flex flex--center">
-        <button class="menu-toggle"></button>
-        <div class="logo"><img src="./images/logo.svg" alt="sneakers logo" /></div>
-        <nav>
-          <ul class="flex">
-            <li><a class="menu-link" href="#">Collections</a></li>
-            <li><a class="menu-link" href="#">Men</a></li>
-            <li><a class="menu-link" href="#">Women</a></li>
-            <li><a class="menu-link" href="#">About</a></li>
-            <li><a class="menu-link" href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="user-info">
-        <ul class="flex flex--center">
-          <li>
-            <a href="#"><img src="./images/icon-cart.svg" alt="cart icon" /></a>
-          </li>
-          <li>
-            <a href="#"><img src="./images/image-avatar.png" alt="user avatar" class="user-avatar" /></a>
-          </li>
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="./js/index.js" defer></script>
+</head>
+
+<body>
+  <header class="flex">
+    <div class="flex flex--center">
+      <button class="menu-toggle"></button>
+      <div class="logo"><img src="./images/logo.svg" alt="sneakers logo" /></div>
+      <nav>
+        <ul class="flex">
+          <li><a class="menu-link" href="#">Collections</a></li>
+          <li><a class="menu-link" href="#">Men</a></li>
+          <li><a class="menu-link" href="#">Women</a></li>
+          <li><a class="menu-link" href="#">About</a></li>
+          <li><a class="menu-link" href="#">Contact</a></li>
         </ul>
-      </div>
-    </header>
-    <main>
-      <div class="grid grid--columns">
-        <div class="grid grid--center product-photos">
+      </nav>
+    </div>
+    <div class="user-info">
+      <ul class="flex flex--center">
+        <li class="cart" data-status="idle" data-hasItens='false'>
+          <span class="cart-items">3</span>
+          <a href="#" class="icon-cart"><img src="./images/icon-cart.svg" alt="cart icon" /></a>
           <div>
-            <button class="previous-photo"></button>
-            <button class="next-photo"></button>
-            <a href="#" class="toggle-photos"><img class="product-big-photo" src="./images/image-product-1.jpg" alt="product photo - shoes" /></a>
-          </div>
-          <div class="flex flex--center product-thumbnails">
-            <a href="#" class="active thumb" data-number="1">
-              <img src="./images/image-product-1-thumbnail.jpg" alt="product photo - shoes" />
-            </a>
-            <a href="#" class="thumb" data-number="2">
-              <img src="./images/image-product-2-thumbnail.jpg" alt="product photo - shoes" />
-            </a>
-            <a href="#" class="thumb" data-number="3">
-              <img src="./images/image-product-3-thumbnail.jpg" alt="product photo - shoes" />
-            </a>
-            <a href="#" class="thumb" data-number="4">
-              <img src="./images/image-product-4-thumbnail.jpg" alt="product photo - shoes" />
-            </a>
-          </div>
-        </div>
-        <div class="grid grid--center">
-          <div class="container grid">
-            <h1 class="fs-400 text-orange letter-space-2 uppercase">Sneaker Company</h1>
-
-            <h2 class="fs-600 letter-space-3">Fall Limited Edition Sneakers</h2>
-
-            <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-
-            <div class="price grid">
-              <div class="flex flex--center">
-                <h3 class="fs-500">$125.00</h3>
-                <h4>50%</h4>
-              </div>
-              <p>$250.00</p>
-            </div>
-
-            <div class="add-to-cart grid">
-              <div class="quantity-selector grid">
-                <button data-quantity="minus"></button>
-                <input name="input-quantity" id="input-quantity" type="text" readonly value="0" />
-                <button data-quantity="plus"></button>
-              </div>
-              <button class="addToCart grid">Add to cart</button>
+            <h5 class="fs-400">Cart</h5>
+            <div class="cart-products">
+              <p class="cart-empty">Your cart is empty.</p>
             </div>
           </div>
+        </li>
+        <li>
+          <a href="#"><img src="./images/image-avatar.png" alt="user avatar" class="user-avatar" /></a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <div class="grid grid--columns">
+      <div class="grid grid--center product-photos">
+        <div>
+          <button class="previous-photo"></button>
+          <button class="next-photo"></button>
+          <a href="#" class="toggle-photos"><img class="product-big-photo" src="./images/image-product-1.jpg"
+              alt="product photo - shoes" /></a>
+        </div>
+        <div class="flex flex--center product-thumbnails">
+          <a href="#" class="active thumb" data-number="1">
+            <img src="./images/image-product-1-thumbnail.jpg" alt="product photo - shoes" />
+          </a>
+          <a href="#" class="thumb" data-number="2">
+            <img src="./images/image-product-2-thumbnail.jpg" alt="product photo - shoes" />
+          </a>
+          <a href="#" class="thumb" data-number="3">
+            <img src="./images/image-product-3-thumbnail.jpg" alt="product photo - shoes" />
+          </a>
+          <a href="#" class="thumb" data-number="4">
+            <img src="./images/image-product-4-thumbnail.jpg" alt="product photo - shoes" />
+          </a>
         </div>
       </div>
-    </main>
+      <div class="grid grid--center">
+        <div class="container grid">
+          <h1 class="fs-400 text-orange letter-space-2 uppercase">Sneaker Company</h1>
 
-    <!-- Photos fullscreen -->
-    <div class="grid grid--center photos-fullscreen">
-      <div class="fs-big-photo">
-        <button class="fs-close"></button>
-        <button class="previous-photo"></button>
-        <button class="next-photo"></button>
-        <img class="product-big-photo" src="./images/image-product-1.jpg" alt="product photo - shoes" />
-      </div>
-      <div class="flex flex--center product-thumbnails">
-        <a href="#" class="active thumb" data-number="1">
-          <img src="./images/image-product-1-thumbnail.jpg" alt="product photo - shoes" />
-        </a>
-        <a href="#" class="thumb" data-number="2">
-          <img src="./images/image-product-2-thumbnail.jpg" alt="product photo - shoes" />
-        </a>
-        <a href="#" class="thumb" data-number="3">
-          <img src="./images/image-product-3-thumbnail.jpg" alt="product photo - shoes" />
-        </a>
-        <a href="#" class="thumb" data-number="4">
-          <img src="./images/image-product-4-thumbnail.jpg" alt="product photo - shoes" />
-        </a>
+          <h2 class="fs-600 letter-space-3">Fall Limited Edition Sneakers</h2>
+
+          <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole,
+            they’ll withstand everything the weather can offer.</p>
+
+          <div class="price grid">
+            <div class="flex flex--center">
+              <h3 class="fs-500">$125.00</h3>
+              <h4>50%</h4>
+            </div>
+            <p>$250.00</p>
+          </div>
+
+          <form id="form" class="add-to-cart grid" method="post">
+            <div class="quantity-selector grid">
+              <button type="button" data-quantity="minus"></button>
+              <input name="input-quantity" id="input-quantity" type="text" readonly value="1" />
+              <button type="button" data-quantity="plus"></button>
+            </div>
+            <input type="hidden" name="productId" id="product-id" value="1" />
+            <input type="hidden" name="productName" id="product-name" value="Autumn Limited Edition..." />
+            <input type="hidden" name="productPrice" id="product-price" value="125.00" />
+            <button type="submit" class="addToCart grid">Add to cart</button>
+          </form>
+        </div>
       </div>
     </div>
-    <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.</div>
-  </body>
+  </main>
+
+  <!-- Photos fullscreen -->
+  <div class="grid grid--center photos-fullscreen">
+    <div class="fs-big-photo">
+      <button class="fs-close"></button>
+      <button class="previous-photo"></button>
+      <button class="next-photo"></button>
+      <img class="product-big-photo" src="./images/image-product-1.jpg" alt="product photo - shoes" />
+    </div>
+    <div class="flex flex--center product-thumbnails">
+      <a href="#" class="active thumb" data-number="1">
+        <img src="./images/image-product-1-thumbnail.jpg" alt="product photo - shoes" />
+      </a>
+      <a href="#" class="thumb" data-number="2">
+        <img src="./images/image-product-2-thumbnail.jpg" alt="product photo - shoes" />
+      </a>
+      <a href="#" class="thumb" data-number="3">
+        <img src="./images/image-product-3-thumbnail.jpg" alt="product photo - shoes" />
+      </a>
+      <a href="#" class="thumb" data-number="4">
+        <img src="./images/image-product-4-thumbnail.jpg" alt="product photo - shoes" />
+      </a>
+    </div>
+  </div>
+  <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend
+      Mentor</a>. Coded by <a href="#">Your Name Here</a>.</div>
+</body>
+
 </html>
