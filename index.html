@@ -57,7 +57,7 @@
           <div>
             <button class="previous-photo"></button>
             <button class="next-photo"></button>
-            <img class="product-big-photo" src="./images/image-product-1.jpg" alt="product photo - shoes" />
+            <a href="#" class="toggle-photos"><img class="product-big-photo" src="./images/image-product-1.jpg" alt="product photo - shoes" /></a>
           </div>
           <div class="flex flex--center product-thumbnails">
             <a href="#" class="active">
@@ -102,6 +102,30 @@
         </div>
       </div>
     </main>
+
+    <!-- Photos fullscreen -->
+    <div class="grid grid--center photos-fullscreen">
+      <div class="fs-big-photo">
+        <button class="fs-close"></button>
+        <button class="previous-photo"></button>
+        <button class="next-photo"></button>
+        <img class="product-big-photo" src="./images/image-product-1.jpg" alt="product photo - shoes" />
+      </div>
+      <div class="flex flex--center product-thumbnails">
+        <a href="#" class="active">
+          <img src="./images/image-product-1-thumbnail.jpg" alt="product photo - shoes" />
+        </a>
+        <a href="#">
+          <img src="./images/image-product-2-thumbnail.jpg" alt="product photo - shoes" />
+        </a>
+        <a href="#">
+          <img src="./images/image-product-3-thumbnail.jpg" alt="product photo - shoes" />
+        </a>
+        <a href="#">
+          <img src="./images/image-product-4-thumbnail.jpg" alt="product photo - shoes" />
+        </a>
+      </div>
+    </div>
     <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.</div>
   </body>
 </html>

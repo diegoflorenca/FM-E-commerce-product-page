@@ -227,7 +227,6 @@ body {
 /* HEADER               */
 /* -------------------- */
 header {
-  margin: 0.5rem 0;
   justify-content: space-between;
 }
 
@@ -513,4 +512,38 @@ button.addToCart:hover {
     grid-auto-flow: column;
     grid-auto-columns: 1fr 2fr;
   }
+}
+
+.photos-fullscreen {
+  display: none;
+}
+
+/* Fullscreen photo */
+.photos-fullscreen.active {
+  display: grid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(var(--black) / 0.8);
+  place-content: center;
+}
+
+.photos-fullscreen > div {
+  max-width: 35rem;
+}
+
+.fs-big-photo {
+  position: relative;
+}
+
+.fs-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1rem;
+  height: 1rem;
+  background: url(../images/icon-close.svg) no-repeat;
+  background-position: center;
 }

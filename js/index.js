@@ -57,3 +57,15 @@ function updateQuantity(e) {
     inputQuantity.value++;
   }
 }
+
+/* Fullscreen photos */
+const btnTogglePhotosFullscreen = document.querySelector('.toggle-photos');
+const photosFullscreen = document.querySelector('.photos-fullscreen');
+const btnClose = document.querySelector('.fs-close');
+
+btnTogglePhotosFullscreen.addEventListener('click', toggleFullscreen);
+btnClose.addEventListener('click', toggleFullscreen);
+
+function toggleFullscreen() {
+  photosFullscreen.classList.toggle('active');
+}
