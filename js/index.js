@@ -15,7 +15,7 @@ Mobile photo navigation
 */
 const previousPhoto = document.querySelector('.previous-photo');
 const nextPhoto = document.querySelector('.next-photo');
-const currentPhoto = document.querySelector('.product-big-photo');
+const currentPhotos = document.querySelectorAll('.product-big-photo');
 
 previousPhoto.addEventListener('click', updatePhoto);
 nextPhoto.addEventListener('click', updatePhoto);
@@ -32,8 +32,7 @@ function updatePhoto(e) {
     if (photoCounter == 0) photoCounter = 4;
   }
 
-  const imageUrl = `./images/image-product-${photoCounter}.jpg`;
-  currentPhoto.setAttribute('src', imageUrl);
+  updateBigPhoto(photoCounter);
 }
 
 /*
@@ -58,6 +57,17 @@ function updateQuantity(e) {
   }
 }
 
+/* Change detailed photo */
+const thumbnails = document.querySelectorAll('.thumb');
+thumbnails.forEach((thumb) => {
+  thumb.addEventListener('click', changeDetailedPhoto);
+});
+
+function changeDetailedPhoto(e) {
+  const thumbNumber = e.currentTarget.dataset.number;
+  updateBigPhoto(thumbNumber);
+}
+
 /* Fullscreen photos */
 const btnTogglePhotosFullscreen = document.querySelector('.toggle-photos');
 const photosFullscreen = document.querySelector('.photos-fullscreen');
@@ -68,4 +78,19 @@ btnClose.addEventListener('click', toggleFullscreen);
 
 function toggleFullscreen() {
   photosFullscreen.classList.toggle('active');
+}
+
+/* Update detailed photo */
+function updateBigPhoto(imageNumber) {
+  thumbnails.forEach((thumb) => {
+    if (thumb.dataset.number == imageNumber) {
+      thumb.classList.add('active');
+    } else {
+      thumb.classList.remove('active');
+    }
+  });
+  const imageUrl = `./images/image-product-${imageNumber}.jpg`;
+  currentPhotos.forEach((currentPhoto) => {
+    currentPhoto.setAttribute('src', imageUrl);
+  });
 }
