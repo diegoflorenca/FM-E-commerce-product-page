@@ -682,6 +682,12 @@ button.addToCart:hover {
   place-content: center;
 }
 
+@media (max-width: 45rem) {
+  .photos-fullscreen.active {
+    display: none;
+  }
+}
+
 .photos-fullscreen > div {
   max-width: 35rem;
 }
