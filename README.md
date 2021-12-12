@@ -35,13 +35,13 @@ Users should be able to:
 
 ### Screenshot
 
-|      Mobile Version      | Menu openned |
-| :----------------------: | :----------: | ----------------------------- | ---------- |
-| ![](./screenshot-mob.png |  width=375)  | ![](./screenshot-mob-menu.png | width=375) |
+|      Mobile Version       |          Menu openned          |
+| :-----------------------: | :----------------------------: |
+| ![](./screenshot-mob.png) | ![](./screenshot-mob-menu.png) |
 
 ###
 
-![./screenshot.png](./screenshot.png | width=575)
+![./screenshot.png](./screenshot.png)
 _Desktop Version_
 
 ### Links
